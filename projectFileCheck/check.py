@@ -1,7 +1,6 @@
 import os
 import re
 import json
-import time
 
 
 def exit_terminal(error_message):

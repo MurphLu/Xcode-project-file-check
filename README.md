@@ -8,12 +8,12 @@ if the project have more than one targets, when add source files may miss to che
 
 all the file path blow means the relative path to the project root path
 
-|key|value type|meaning|
-| :--- | :--- | :--- |
-| project_file_path | String | the .xcodeproj file path |
-| base_target | String | all the target need to check based on which target |
-| targets_need_to_check | Array | all the target need to check
-| local_file_pathes | Array | all the local filder in the project need to check |
+|key|value type | required |meaning|
+| :--- | :--- | :--- | :--- |
+| project_file_path | String | true | the .xcodeproj file path |
+| base_target | String | false | all the target need to check based on which target |
+| targets_need_to_check | Array | true | all the target need to check
+| local_file_pathes | Array | true | all the local filder in the project need to check |
 
 ## ignore_files
 

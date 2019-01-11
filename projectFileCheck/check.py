@@ -7,6 +7,7 @@ def exit_terminal(error_message):
     os.system('rm projectFileCheck/project.pbxproj.json')
     raise NameError(error_message)
 
+# load config value in the 'project_check.json' by key
 def load_config(key):
     try:
         with open('projectFileCheck/project_check.json', 'r') as f:
@@ -17,6 +18,7 @@ def load_config(key):
         print("open config file '%s' failed" % 'project_check.json')
         exit_terminal("open config file error '%s'" % 'projectFileCheck/project_check.json')
 
+# load all files ignore to check in the 'ignore_files'
 def load_ignore_files():
     try:
         with open('projectFileCheck/ignore_files') as f:
@@ -27,11 +29,13 @@ def load_ignore_files():
     finally:
         f.close()
 
+# run commands, when run failed then exit
 def run_command(command):
     result = os.system(command)
     if result > 0:
         exit_terminal("command error '%s'" % command)
 
+# get all local files in the filder passed
 def load_local_files(root_path, ignore_files):
     local_file_list = []
     for file in os.listdir(root_path):
@@ -45,9 +49,11 @@ def load_local_files(root_path, ignore_files):
             local_file_list.append(file)
     return local_file_list
 
+# use plutil convert .pbxproj to .json which is easily parsed
 def parse_project_file():
     run_command('plutil -convert json -s -r -o projectFileCheck/project.pbxproj.json %s/project.pbxproj' % load_config('project_file_path'))
 
+# get files are inclueded in the pointed target
 def load_files_in_target(target_name):
     files_in_target = []
     try:

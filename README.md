@@ -19,6 +19,7 @@ all the file path blow means the relative path to the project root path
 
 add all files and filders which is not need to check, you can use Regular Expressions also
 one file or one Regular Expression in one line
+when use Regular Expressions please make sure the reg is worked in python
 
 ## useage
 

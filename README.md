@@ -36,3 +36,8 @@ fi
 
 echo "======================================================"
 ```
+
+
+## on the way
+
+1. add specific ignore files for different target to seprate the check for different target

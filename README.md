@@ -26,16 +26,12 @@ when use Regular Expressions please make sure the reg is worked in python
 after config all above, you can copy the projectFileCheck filder to the project root path, and add the script blow in the Build Phases
 
 ```sh
-echo "======================================================"
-echo "please check the log blow, and if the file blow in file is ok in the targets"
 
-python projectFileCheck/check.py
+python scripts/projectFileCheck/check.py
 
 if [ $? -ne 0 ]; then
     exit 1
 fi
-
-echo "======================================================"
 ```
 
 
